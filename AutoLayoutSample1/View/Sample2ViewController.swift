@@ -15,6 +15,7 @@ class Sample2ViewController: UIViewController {
     private var buttonStackView = UIStackView()
     private var blueButton = UIButton()
     private var redButton = UIButton()
+    private var purpleLabel = UILabel()
     
     
     // MARK: - View Life Cycle
@@ -35,6 +36,7 @@ class Sample2ViewController: UIViewController {
         setUpBlueButton()
         setUpRedButton()
         setUpGreenView()
+        setUpPurpleLabel()
     }
     
     private func setUpBaseStackView() {
@@ -89,6 +91,20 @@ class Sample2ViewController: UIViewController {
         greenView.topAnchor.constraint(equalTo: baseStackView.topAnchor).isActive = true
         greenView.leadingAnchor.constraint(equalTo: baseStackView.leadingAnchor).isActive = true
         greenView.trailingAnchor.constraint(equalTo: baseStackView.trailingAnchor).isActive = true
+    }
+    
+    private func setUpPurpleLabel() {
+        purpleLabel.translatesAutoresizingMaskIntoConstraints = false
+        purpleLabel.backgroundColor = UIColor.purple
+        purpleLabel.text = "PurpleLable"
+        purpleLabel.textAlignment = .center
+        purpleLabel.textColor = UIColor.white
+        greenView.addSubview(purpleLabel)
+        
+        purpleLabel.topAnchor.constraint(equalTo: greenView.topAnchor, constant: 20).isActive = true
+        purpleLabel.leadingAnchor.constraint(equalTo: greenView.leadingAnchor, constant: 100).isActive = true
+        purpleLabel.trailingAnchor.constraint(equalTo: greenView.trailingAnchor, constant: -100).isActive = true
+        purpleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
 }
